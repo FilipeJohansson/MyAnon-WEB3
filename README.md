@@ -2,6 +2,8 @@
 
 I'll get a old project (MyAnon) and pass to WEB3
 
+I'm following the tutorial from [Dapp University](https://www.youtube.com/watch?v=8rhueOcTu8k&list=PLsMA88jKQmTUf7IqAsLpvUJ7OxKUI3wKZ&index=4&t=305s) to learn
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
