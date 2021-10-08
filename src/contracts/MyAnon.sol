@@ -25,6 +25,12 @@ contract MyAnon {
 
     // Create posts
     function uploadPost(string memory _postHash, string memory _description) public {
+        // Make sure description exists
+        require(bytes(_description).length > 0);
+
+        // Make suer uploader address exists
+        require(msg.sender != address(0x0));
+
         //Increment post id
         postCount++;
 
