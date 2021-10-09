@@ -66,7 +66,7 @@ contract MyAnon {
         // Incement the tip amount
         _post.tipAmount += msg.value;
         // Update the post
-        post[_id] = _post;
+        posts[_id] = _post;
 
         // Trigger an event
         emit PostTipped(_id, _post.hash, _post.description, _post.tipAmount, _author);
