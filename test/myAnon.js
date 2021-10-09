@@ -46,7 +46,22 @@ contract("MyAnon", ([deployer, author, tipper]) => {
       assert.equal(event.description, 'Post Description', 'description is not correct')
       assert.equal(event.tipAmount, '0', 'tip is not correct')
       assert.equal(event.author, author, 'author is not correct')
+
+      // FAILURE: Image must have hash
+      // await myAnon.uploadPost('', 'Post description', {from: author}).should.be.rejected;
+
+      // FAILURE: Post must have description
+      await myAnon.uploadPost('Image hash', '', {from: author}).should.be.rejected;
+    })
+
+    // Check from struct
+    it('lists posts', async () => {
+      const post = await myAnon.posts(postCount)
+      assert.equal(post.id.toNumber(), postCount.toNumber(), 'id is not correct')
+      assert.equal(post.hash, hash, 'hash is not correct')
+      assert.equal(post.description, 'Post Description', 'description is not correct')
+      assert.equal(post.tipAmount, '0', 'tip is not correct')
+      assert.equal(post.author, author, 'author is not correct')
     })
   })
-  
 })
